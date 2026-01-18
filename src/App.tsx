@@ -1,6 +1,7 @@
 
 import './App.css'
 import { Button } from './components/ui/Button'
+import { PlusIcon } from './icons/PlusIcon'
 
 function App() {
  
@@ -8,7 +9,8 @@ function App() {
   return (
     <>
      <h2>Hello ji hello</h2>
-     <Button>Hello ji </Button>
+     <Button startIcon={<PlusIcon/>} text='Hello Ji Hello'></Button>
+     <Button  text='Frontend is harder than backend'></Button>
     </>
   )
 }
