@@ -10,6 +10,9 @@ interface ButtonProps {
   children?: React.ReactNode;
 }
 
+//#5147E4
+//#E1E7FE
+
 const variantStyles = {
   primary: "bg-violet-600 text-white hover:bg-violet-700 focus:ring-violet-500",
   secondary: "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 focus:ring-zinc-500",
