@@ -1,19 +1,35 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Dashboard } from "./pages/Dashboard";
+import { Signin } from "./pages/Signin";
+import { Signup } from "./pages/Signup";
 
-import './App.css'
-import { Button } from './components/ui/Button'
-import { PlusIcon } from './icons/PlusIcon'
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
- 
-
   return (
-    <>
-     <h2>Hello ji hello</h2>
-     <Button startIcon={<PlusIcon/>} text='Hello Ji Hello'></Button>
-     <Button  text='Frontend is harder than backend'></Button>
-     <Button  variant='secondary' text='Yo My Name is walter White'  size='lg'></Button>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
